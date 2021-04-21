@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}Hero Squad{{/block}}</title>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    {{#block "styles"}}
+        <!-- Main Stylesheet-->
+        <link rel="stylesheet" href="/css/style.css">
+    {{/block}}
+
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-transparent sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <span class="row">
+                 <img class="img-fluid nav-brand-logo"src="/images/bullLogo.png" alt="">
+                <h1>HERO SQUAD</h1>
+            </span>
+
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/heroes">Heroes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/squads">Squads</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/heroes/form">Add Hero</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/squads/form">Add Squad</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+{{#block "content"}}
+
+{{/block}}
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-2"></div>
+        <div class="col-10">
+                        {{#block "footer"}}
+
+                        {{/block}}
+
+                </div>
+        <div class="col-2"></div>
+
+
+
+    </div>
+</div>
+
+
+
+<script src="https://kit.fontawesome.com/d683449ddc.js" crossorigin="anonymous"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+</body>
+</html>

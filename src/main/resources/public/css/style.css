@@ -1,0 +1,128 @@
+body {
+    /*padding-top: 56px;*/
+    /*background-color: #1d1d1d;*/
+
+    /*background-color: rgb(51, 51, 51);*/
+    background-image: url('../images/purplebackground2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+
+}
+.navbar{
+    font-family: 'Rye', cursive;
+
+
+}
+.navbar-brand h1{
+    font-size:50px;
+    color: white;
+}
+.nav-item a{
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:20px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+.nav-brand-logo{
+    height: 50px;
+    width:50px
+}
+
+.nav-link {
+
+    border-right:4px solid white;
+    margin-bottom: -1px;
+}
+
+.nav-link:hover{
+    font-weight: 800;
+    background:white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: -1px;
+
+}
+
+
+hr{
+    color: white;
+}
+
+
+.image{
+    position:relative;
+    width:400px;
+}
+
+.image-img{
+    display:block;
+    width:100%;
+}
+
+.image-overlay{
+    position: absolute;
+    top:5%;
+    left:5%;
+    bottom:5%;
+    right:5%;
+    /* width:100%;
+    height:100%; */
+    /*background: rgba(0,0,0,0.6);*/
+    color:white;
+    display: flex;
+    font-family: 'Courier New', Courier, monospace;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*overflow: hidden;*/
+    transition:0.25s;
+}
+.image-img2{
+    height:200px;
+    width:200px;
+}
+.image-title{
+    text-align: left;
+}
+
+
+.image-info{
+    /*border: 6px solid white;*/
+    margin:1em;
+
+}
+.form-section{
+
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 10px;
+    box-shadow:5px 5px 10px #4B0082;
+    color:white;
+/*rgb(110, 108, 108)*/
+}
+.form-btn{
+    margin-top: 30px;
+    padding: 18px;
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    background-color:black;
+    border: 4px solid #4B0082;
+    border-radius: 10px;
+    box-shadow:5px 5px 10px #4B0082;
+
+}
+.form-btn:hover{
+    font-weight: 900;
+    color:white;
+}
+
+.feedback{
+    color: white;
+    text-transform: uppercase;
+}
