@@ -48,14 +48,22 @@ public class HeroTest {
     }
 
     @Test
-    public void deleteSpecificHero() {
+    public void deleteHeroById() {
         Hero hero=setUpNewHero();
 
-        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
+        Hero otherHero=setUpOtherHero();
         hero.deleteHero();
         assertEquals(1,Hero.getHeroes().size());
         assertEquals(Hero.getHeroes().get(0).getId(),2);
 
+
+    }
+    @Test
+    public void deleteAllHeroes() {
+        Hero hero=setUpNewHero();
+        Hero otherHero=setUpOtherHero();
+        hero.clearAll();
+        assertEquals(0,Hero.getHeroes().size());
 
     }
 }
