@@ -192,6 +192,40 @@ public class App {
 
         },new HandlebarsTemplateEngine());
 
+        get("/squad/:id/delete",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfSquadToDelete=Integer.parseInt(request.params(":id"));
+            Squad foundSquad=Squad.findById(idOfSquadToDelete);
+            ArrayList<Hero> heroes=foundSquad.getHeroes();
+
+            for(int i=0;i<heroes.size();i++){
+                heroes.get(i).updateHero(false);
+            }
+            for (int i=idOfSquadToDelete;i<Squad.getSquads().size();i++){
+                Squad.getSquads().get(i).setId(Squad.getSquads().get(i).getId()-1);
+            }
+            foundSquad.deleteSquad();
+
+            ArrayList<Squad> squads = Squad.getSquads();
+            model.put("squads", squads);
+            return new ModelAndView(model,"squad-view.hbs");
+
+        },new HandlebarsTemplateEngine());
+
+        //delete all squads
+        get("/squads/delete",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Squad.clearAll();
+            ArrayList<Hero> heroes=Hero.getHeroes();
+            for (int i=0;i<heroes.size();i++){
+                heroes.get(i).updateHero(false);
+            }
+            model.put("squads",Squad.getSquads());
+            return new ModelAndView(model,"squad-view.hbs");
+
+        },new HandlebarsTemplateEngine());;
+
+
 
 
 
