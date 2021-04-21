@@ -59,4 +59,42 @@ public class Hero {
     public static ArrayList<Hero> getHeroes() {
         return heroes;
     }
+    public void updateHero(boolean occupied){
+
+        this.occupied = occupied;
+    }
+    public void deleteHero(){
+        heroes.remove(id-1);
+    }
+
+    public static Hero findById(int id){
+        try{
+            return heroes.get(id-1);
+
+        }catch(IndexOutOfBoundsException exception){
+            return null;
+        }
+    }
+    public  String randomImage() {
+
+        int imagescount = 5;
+        JLabel MyImage = new JLabel(new ImageIcon("image" + (int)(Math.floor(Math.random()*imagescount)) + ".png"));
+        imageUrl=String.valueOf(MyImage);
+
+        return imageUrl;
+    }
+
+    public void setId(int id){
+        this.id = id;
+    }
+
+
+    public static void clearAll(){
+        heroes.clear();
+    }
+    public boolean isOccupied() {
+        return occupied;
+    }
+
+
 }
