@@ -55,4 +55,8 @@ public class Hero {
     public int getAttack() {
         return attack;
     }
+
+    public static ArrayList<Hero> getHeroes() {
+        return heroes;
+    }
 }
