@@ -116,6 +116,40 @@ public class App {
             return new ModelAndView(model, "squad-form.hbs");
         }, new HandlebarsTemplateEngine());
 
+        //------------------------2.READ---------------
+        //(ALL HEROES)
+        get("/heroes",(request, response) -> {
+            Map<String,Object> model = new HashMap<>();
+            //get all heroes
+            ArrayList<Hero> heroes = Hero.getHeroes();
+            //pass all heroes to the model
+            model.put("heroes", heroes);
+
+            return new ModelAndView(model,"heroes-view.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //(SPECIFIC HERO)
+        get("/heroes/:id",(request, response) -> {
+            Map<String,Object> model = new HashMap<>();
+
+            int heroId = Integer.parseInt(request.params(":id"));
+            Hero foundHero = Hero.findById(heroId);
+            model.put("hero",foundHero);
+
+            ArrayList<Hero> heroes = Hero.getHeroes();
+            model.put("heroes", heroes);
+
+            return new ModelAndView(model, "hero-view.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        //(ALL SQUADS)
+        get("/squads",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("squads",Squad.getSquads());
+            return new ModelAndView(model,"squads-view.hbs");
+
+        },new HandlebarsTemplateEngine());
+
 
 
 
