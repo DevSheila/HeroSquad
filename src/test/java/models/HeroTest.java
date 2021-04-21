@@ -36,4 +36,14 @@ public class HeroTest {
         Hero foundHero=Hero.findById(1);
         assertEquals(hero,foundHero);
     }
+
+    @Test
+    public void testIfInstanceIsUpdated() throws Exception {
+        Hero hero=setUpNewHero();
+        int formerID=hero.getId();
+        boolean formerOccupied=hero.isOccupied();
+        hero.updateHero(true);
+        assertEquals(formerID,hero.getId());
+        assertNotEquals(formerOccupied,hero.isOccupied());
+    }
 }
