@@ -22,5 +22,11 @@ public class Squad {
         this.id = squads.size();
 
     }
+    public static ArrayList<Squad> getSquads() {
+        return squads;
+    }
+    public static void clearAll(){
+        squads.clear();
+    }
 
 }
