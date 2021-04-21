@@ -1,0 +1,68 @@
+{{#partial "content"}}
+    <section class="form " id="formSection">
+        <div class="container p-5">
+            <div class="row d-flex justify-content-center my-5">
+                <div class="col-lg-10  px-5 pt-5 form-section">
+                    <!-- feedback  -->
+                    <div class="feedback text-center text-capitalize">
+
+                    </div>
+                    <h4 class="text-center"> ADD SQUAD</h4>
+                    <hr>
+                    <form action="/squads/new" method="post" id="form">
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label for="name">Name</label><br>
+                                <input type="text" name="name" id="name" class="form-control my-3 p-4"><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label for="size">Max size -(Excess heroes will not be added)</label><br>
+                                <input type="number" name="size" id="size" class="form-control my-3 p-4"><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+
+                                <label for="cause">Cause</label><br>
+                                <input type="text" name="cause" id="cause" class="form-control my-3 p-4"><br>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <p>Available Heroes</p>
+
+                                {{#if heroes}}
+                                    {{#each heroes}}
+                                        {{#if occupied}}
+
+                                        {{else}}
+                                            <h3><input type="checkbox" name="heroes" id={{id}} value={{id}}> {{name}}</h3>
+                                        {{/if}}
+
+                                    {{/each}}
+                                {{else}}
+                                    <h4>Create more heroes</h4>
+
+                                {{/if}}
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 mb-5">
+                                <button type="submit" class="btn form-btn btn-lg">ADD SQUAD</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+{{/partial}}
+{{> layout.hbs}}
