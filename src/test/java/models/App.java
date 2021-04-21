@@ -24,6 +24,30 @@ public class App {
         Hero newHero5 =new Hero("Elon Mask",30,"Vast knowledge in powerfultech ","Emotional",20,60);
         Hero newHero6 =new Hero("Carmen Sandiego",19,"Pick Pocketing","flu",78,90);
 
+        get("/",(request, response) ->{
+            Map<String,Object> model = new HashMap<String,Object>();
+            model.put("username", request.session().attribute("username"));
+
+            return new ModelAndView(model, "index.hbs");
+
+        },new HandlebarsTemplateEngine());
+
+
+
+        post("/home",(request,response)->{
+            Map<String,Object> model = new HashMap<String,Object>();
+
+            //taking username entered on form
+            String inputUsername = request.queryParams("username");
+
+            //saving username passed on form to our session data
+            request.session().attribute("username",inputUsername);
+
+            //passing session username to model
+            model.put("username", inputUsername);
+            return new ModelAndView(model, "index.hbs");
+        },new HandlebarsTemplateEngine());
+
 
 
 
