@@ -169,6 +169,29 @@ public class App {
             return new ModelAndView(model,"squad-view.hbs");
         },new HandlebarsTemplateEngine());
 
+        //-----------------------4.DELETE( ALL HEROES)------------------
+        //delete all heroes
+        get("/heroes/delete",(request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            Hero.clearAll();
+            model.put("heroes",Hero.getHeroes());
+            return new ModelAndView(model,"heroes-view.hbs");
+
+        },new HandlebarsTemplateEngine());
+        get("/hero/:id/delete",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfHeroToDelete=Integer.parseInt(request.params(":id"));
+            Hero foundHero=Hero.findById(idOfHeroToDelete);
+            for (int i=idOfHeroToDelete;i<Hero.getHeroes().size();i++){
+                Hero.getHeroes().get(i).setId(Hero.getHeroes().get(i).getId()-1);
+            }
+            foundHero.deleteHero();
+            ArrayList<Hero> heroes = Hero.getHeroes();
+            model.put("heroes", heroes);
+            return new ModelAndView(model,"heroes-view.hbs");
+
+        },new HandlebarsTemplateEngine());
+
 
 
 
