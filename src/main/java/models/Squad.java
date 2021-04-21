@@ -25,8 +25,19 @@ public class Squad {
     public static ArrayList<Squad> getSquads() {
         return squads;
     }
+    public ArrayList<Hero> getHeroes() {
+        return heroes;
+    }
     public static void clearAll(){
         squads.clear();
+    }
+    public static Squad findById(int id){
+        try {
+            return squads.get(id-1);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
+
     }
 
 }

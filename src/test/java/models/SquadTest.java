@@ -11,6 +11,7 @@ public class SquadTest {
 
     @After
     public void tearDown() throws Exception {
+        Squad.clearAll();
 
     }
     private Squad setUpNewSquad() {
@@ -44,7 +45,7 @@ public class SquadTest {
     }
 
     @Test
-    public void findById() throws Exception {
+    public void findSquadById() throws Exception {
         Squad squad=setUpNewSquad();
         Squad otherSquad=setUpNewSquad();
         Squad foundSquad=Squad.findById(1);
