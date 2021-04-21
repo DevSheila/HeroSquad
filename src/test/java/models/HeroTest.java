@@ -66,4 +66,12 @@ public class HeroTest {
         assertEquals(0,Hero.getHeroes().size());
 
     }
+    @Test
+    public void heroInstances() throws Exception{
+        Hero hero=setUpNewHero();
+        Hero otherHero=setUpOtherHero();
+        assertTrue(Hero.getHeroes().contains(hero));
+        assertTrue(Hero.getHeroes().contains(otherHero));
+    }
+
 }
