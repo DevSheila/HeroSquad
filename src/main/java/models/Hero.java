@@ -30,4 +30,29 @@ public class Hero {
 
 
     }
+
+    public String getName(){
+        return name;
+    }
+    public int  getId(){
+        return id;
+    }
+    public int getAge(){
+        return age;
+    }
+    public String getPowers() {
+        return powers;
+    }
+
+    public String getWeakness() {
+        return weakness;
+    }
+
+    public int getDefence() {
+        return defence;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
 }
