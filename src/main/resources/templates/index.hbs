@@ -1,0 +1,48 @@
+
+{{#partial "styles"}}
+
+    <!--    Custom index page css-->
+    <link rel="stylesheet" href="/css/custom.css">
+{{/partial}}
+
+{{#partial "content"}}
+
+
+    <div class="container-fluid wrapper">
+
+        <div class="logo">
+            <img src="/images/bullLogo.png" alt="logo" />
+        </div>
+
+        {{#if username}}
+
+            <div class="row username">
+                <h1 class="username-title text-center text-uppercase text-white">Welcome {{username}} to Hero Squad</h1>
+            </div>
+            <div class="row indexButton">
+                <div class="create">
+                    <a href="heroes/form"><button class="btn btn-lg home-btn">Add Hero</button></a>
+                    <a href="squads/form"><button class="btn  btn-lg home-btn">Add Squad</button></a>
+
+                </div>
+
+
+            </div>
+        {{else}}
+            <div class="title text-center">
+                <h1>WELCOME TO HERO SQUAD</h1>
+                <h3>Sign In For More !!!</h3>
+            </div>
+            <form action="/home" method="post">
+
+                <input type="text" name="username" id="username" class="submitInput" placeholder="Enter user name"  />
+
+                <button class="btn submitBtn" type="submit">SUBMIT</button>
+            </form>
+        {{/if}}
+
+    </div>
+{{/partial}}
+{{> layout.hbs}}
+
+
