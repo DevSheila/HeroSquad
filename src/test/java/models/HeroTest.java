@@ -14,6 +14,9 @@ public class HeroTest {
     private Hero setUpNewHero() {
         return new Hero("Paper Cut",20,"Make any weapon from paper ","water",56,89);
     }
+    private Hero setUpOtherHero() {
+        return new Hero("Carmen Sandiego",19,"Pick Pocketing","flu",78,90);
+    }
     @Test
     public void createInstanceOfHero_true() throws Exception{
         Hero hero=setUpNewHero();
@@ -23,7 +26,14 @@ public class HeroTest {
     @Test
     public void returnAllInstancesOfHero() throws Exception{
         Hero hero=setUpNewHero();
-        Hero otherHero=new Hero("Carmen Sandiego",19,"Pick Pocketing","flu",78,90);
+        Hero otherHero=setUpOtherHero();
         assertEquals(2,Hero.getHeroes().size());
+    }
+    @Test
+    public void findById() throws Exception{
+        Hero hero=setUpNewHero();
+        Hero otherHero=setUpOtherHero();
+        Hero foundHero=Hero.findById(1);
+        assertEquals(hero,foundHero);
     }
 }
