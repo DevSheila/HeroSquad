@@ -49,6 +49,31 @@ public class App {
         },new HandlebarsTemplateEngine());
 
 
+        //-------------------------------1.CREATE-----------------------
+        //A.)----------------------------CREATE HEROES------------------
+        get("/heroes/form",(request, response) -> {
+            Map<String,Object> model = new HashMap<String,Object>();
+            return new ModelAndView(model,"hero-form.hbs");
+
+        }, new HandlebarsTemplateEngine());
+
+        post("/heroes/new", (request, response) -> {
+
+            Map<String, Object> model = new HashMap<>();
+
+            String name = request.queryParams("name");
+            int age=Integer.parseInt(request.queryParams("age"));
+            String powers=request.queryParams("powers");
+            String weakness=request.queryParams("weakness");
+            int defence=Integer.parseInt(request.queryParams("defence"));
+            int attack = Integer.parseInt(request.queryParams("attack"));
+            Hero newHero = new Hero(name,age,powers,weakness,defence,attack);
+
+            model.put("heroes", newHero);
+            return new ModelAndView(model, "hero-form.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
 
 
     }
