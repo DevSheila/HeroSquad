@@ -150,6 +150,25 @@ public class App {
 
         },new HandlebarsTemplateEngine());
 
+        //(ALL SQUADS)
+        get("/squads",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("squads",Squad.getSquads());
+            return new ModelAndView(model,"squads-view.hbs");
+
+        },new HandlebarsTemplateEngine());
+
+        //(SPECIFIC SQUAD)
+        get("/squads/:id",(request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            int idOfSquadToFind=Integer.parseInt(request.params(":id"));
+            Squad foundSquad=Squad.findById(idOfSquadToFind);
+            model.put("squad",foundSquad);
+            ArrayList<Squad> squads=Squad.getSquads();
+            model.put("squads",squads);
+            return new ModelAndView(model,"squad-view.hbs");
+        },new HandlebarsTemplateEngine());
+
 
 
 
