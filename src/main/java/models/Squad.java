@@ -22,15 +22,39 @@ public class Squad {
         this.id = squads.size();
 
     }
+
+    //getters
+    public int getId() {
+        return id;
+    }
+
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCause() {
+        return cause;
+    }
+
+    //getters for heroes and squads
     public static ArrayList<Squad> getSquads() {
         return squads;
     }
+
     public ArrayList<Hero> getHeroes() {
         return heroes;
     }
+
+    //other methods
+
     public static void clearAll(){
         squads.clear();
     }
+
     public static Squad findById(int id){
         try {
             return squads.get(id-1);
@@ -39,5 +63,16 @@ public class Squad {
         }
 
     }
+
+    public void deleteSquad(){
+        squads.remove(id-1);
+    }
+
+
+    //setters
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
 }

@@ -52,6 +52,24 @@ public class SquadTest {
         assertEquals(squad,foundSquad);
     }
 
+    @Test
+    public void deleteSquadByID() {
+        Squad squad=setUpNewSquad();
+        Squad otherSquad=setUpNewSquad();
+        squad.deleteSquad();
+        assertEquals(1,Squad.getSquads().size());
+        assertEquals(Squad.getSquads().get(0).getId(),2);
+
+    }
+    @Test
+    public void deleteAllSquads() {
+        Squad squad=setUpNewSquad();
+        Squad otherSquad=setUpNewSquad();
+        Squad.clearAll();
+        assertEquals(0,Squad.getSquads().size());
+
+    }
+
 
 
 
