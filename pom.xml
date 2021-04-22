@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ruth.hero-squad</groupId>
-    <artifactId>Hero-Squad</artifactId>
+    <groupId>com.example</groupId>
+    <artifactId>devsheila-hero-squad</artifactId>
     <version>1.0</version>
 
     <dependencies>
@@ -77,9 +77,9 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>bleh-squad</appName>
+                    <appName>devsheila-hero-squad</appName>
                     <processTypes>
-                        <web>java -jar target/bleh-squad-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/devsheila-hero-squad-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
