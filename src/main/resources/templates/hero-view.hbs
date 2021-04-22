@@ -1,0 +1,48 @@
+{{#partial "content"}}
+    <div class="container mt-5">
+        {{#if hero}}
+
+            <div class="row text-center">
+
+                <div class="col-lg-12 col-md-12 col-12 mb-4 image">
+                    <div class="image-item">
+                        <img  class="img-fluid image-img" src="/images/overlay3.png" alt="">
+                        <div class="image-overlay ">
+                            <div class="image-info ">
+                                <div class="row">
+
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <div class="image-title">
+                                            <p>Name : {{hero.name}}</p>
+                                            <p>Age : {{hero.age}}</p>
+                                            <p>Special Powers : {{hero.powers}}</p>
+                                            <p>Weakness: {{hero.weakness}}</p>
+                                            <p>Defence : {{hero.defence}}</p>
+                                            <p>Attack : {{hero.attack}}</p>
+                                            <p>Occupied : {{hero.occupied}}</p>
+                                            <div class="row">
+                                                <a href="/heroes"><button class="btn btn-primary m-2">View All Heroes</button></a> <br><br>
+                                                <a href="/hero/{{hero.id}}/delete"><button class="btn btn-danger m-2">Delete Hero</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        {{else}}
+
+            <div class="container">
+                <h1 class="text-center feedback">Hero Not Available!</h1>
+
+            </div>
+        {{/if}}
+
+
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}

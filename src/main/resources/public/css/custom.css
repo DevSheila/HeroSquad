@@ -1,0 +1,117 @@
+
+body {
+    background-color: rgb(51, 51, 51);
+}
+
+.navbar{
+    font-family: 'Rye', cursive;
+
+
+}
+.navbar-brand h1{
+    font-size:50px;
+    color: white;
+}
+.nav-item a{
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size:20px;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+.nav-brand-logo{
+    height: 50px;
+    width:50px
+}
+
+.nav-link {
+
+    border-right:4px solid white;
+    margin-bottom: -1px;
+}
+
+.nav-item a:hover{
+    font-weight: 800;
+    background:white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: -1px;
+
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.wrapper .logo img {
+    height: 300px;
+}
+
+input[type="text"],
+input[type="text"]:focus,
+input[type="email"],
+input[type="email"]:focus,
+textarea[type="text"],
+textarea[type="text"]:focus {
+    background: transparent;
+    border: rgb(1, 1, 1);
+    border-bottom: 4px solid  #4B0082;
+    color: #fff;
+    font-size: 20px;
+    outline: none;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 40px;
+    width: 350px;
+}
+.title{
+    font-family: 'Rye', cursive;
+    font-size: 100px;
+    color: white;
+
+
+}
+
+.submitBtn {
+    margin-top: 30px;
+    padding: 18px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #4B0082;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
+form .searchInput {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+}
+.home-btn{
+    margin-top: 30px;
+    padding: 18px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #4B0082;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+}
+.home-btn:hover{
+
+    font-weight: bolder;
+}
+
+
