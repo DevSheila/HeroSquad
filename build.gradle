@@ -1,22 +1,22 @@
-//plugins {
-//    id 'java'
-//    id 'application'
-//
-//}
-//group 'org.HeroSquad'
-//version '1.0-SNAPSHOT'
-//mainClassName = 'App'
-//
-//apply plugin: 'java'
-//
-//repositories {
-//    mavenCentral()
-//}
-//
-//dependencies {
-//    testCompile group: 'junit', name: 'junit', version: '4.12'
-//    compile "com.sparkjava:spark-core:2.6.0"
-//    compile "com.sparkjava:spark-template-handlebars:2.5.5"
-//    compile 'org.slf4j:slf4j-simple:1.7.21'
-//}
-//
+plugins {
+    id 'java'
+    id 'application'
+
+}
+group 'org.devsheila-hero-squad'
+version '1.0-SNAPSHOT'
+mainClassName = 'App'
+
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.sparkjava:spark-core:2.6.0"
+    compile "com.sparkjava:spark-template-handlebars:2.5.5"
+    compile 'org.slf4j:slf4j-simple:1.7.21'
+}
+
