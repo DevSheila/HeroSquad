@@ -22,7 +22,6 @@ public class SquadTest {
         heroes.add(otherHero);
         return new Squad(10,"Myth Busters","justice and equality",heroes);
     }
-
     @Test
     public void createInstanceOfSquad() throws Exception {
         Squad squad = setUpNewSquad();
@@ -31,9 +30,9 @@ public class SquadTest {
 
     @Test
     public void returnAllInstances_true() throws Exception {
-        Squad squad=setUpNewSquad();
-        Squad otherSquad=setUpNewSquad();
-        assertEquals(2,Squad.getSquads().size());
+        Squad squad = setUpNewSquad();
+        Squad otherSquad = setUpNewSquad();
+        assertEquals(2, Squad.getSquads().size());
     }
 
     @Test
