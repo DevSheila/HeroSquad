@@ -20,9 +20,11 @@ public class App {
         return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
     }
 
+
     //-----------HEROKU END-----
 
-    public static void main (String[] args) {
+    public static void main(String[] args) {
+
         //heroku port
         port(getHerokuAssignedPort());
         staticFileLocation("/public");

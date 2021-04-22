@@ -77,9 +77,9 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Change this to YOUR application name! -->
-                    <appName>fandom-hero-squad</appName>
+                    <appName>hero-squad-fans</appName>
                     <processTypes>
-                        <web>java -jar target/fandom-hero-squad-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar target/hero-squads-fans-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
