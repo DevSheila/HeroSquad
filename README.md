@@ -21,7 +21,7 @@ Hero Squad is an application that allows you to add / recruit heroes.You can als
 
 
 ## Demo
-Link to live site: 
+Link to live site: https://devsheila-hero-squad.herokuapp.com/
 
 ## Technologies
 
