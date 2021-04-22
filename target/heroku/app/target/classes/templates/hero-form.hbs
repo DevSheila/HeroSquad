@@ -1,0 +1,73 @@
+{{#partial "content"}}
+    <section class="form " id="formSection">
+        <div class="container p-5">
+            <div class="row d-flex justify-content-center my-5">
+                <div class="col-lg-10  px-5 pt-5 form-section">
+
+
+                    <h4 class="text-center"> ADD HERO</h4>
+                    <form action="/heroes/new" method="post" id="form">
+                        <hr>
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label for="name">Name</label><br>
+                                <input type="text" name="name" id="name" class="form-control my-3 p-4"><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label for="age">Age</label><br>
+                                <input type="number" name="age" id="age" class="form-control my-3 p-4" ><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label for="powers">Special Powers</label><br>
+                                <input type="text" name="powers" id="powers" class="form-control my-3 p-4"><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+
+                                <label for="weakness">Weakness</label><br>
+                                <input type="text" name="weakness" id="weakness" class="form-control my-3 p-4"><br>
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+                                <label for="defence">Defense</label><br>
+                                <input type="number" name="defence" id="defence" max="100" min="1" class="form-control my-3 p-4"><br>
+
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12">
+
+                                <label for="attack">Attack</label><br>
+                                <input type="number" name="attack" id="attack" class="form-control my-3 p-4"><br>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="col-lg-12 col-12 mb-5">
+                                <button type="submit"  id="btnSubmit" class=" btn form-btn btn-lg btn1" >ADD HERO</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{{/partial}}
+{{> layout.hbs}}

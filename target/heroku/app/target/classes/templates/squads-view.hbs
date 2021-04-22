@@ -1,0 +1,45 @@
+{{#partial "content"}}
+    <div class="container mt-5">
+        <div class="row text-center">
+            {{#if squads}}
+                {{#each squads}}
+                    <div class="col-lg-6 col-md-12 col-12 mb-4 image">
+                        <div class="image-item">
+                            <img  class="img-fluid image-img"src="/images/overlay3.png" alt="">
+                            <div class="image-overlay ">
+                                <div class="image-info ">
+                                    <div class="row">
+
+                                        <div class="col-lg-12 col-md-12 col-12">
+                                            <div class="image-title">
+                                                <p>NAME: {{name}}</p>
+                                                <p>CAUSE : {{cause}}</p>
+                                                <p>MAX-SIZE : {{maxSize}}</p>
+                                                <a href="/squads/{{id}}"><button class="btn btn-info btn-md">Details</button></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                {{/each}}
+            {{else}}
+                <div class="container">
+                    <h1 class="text-center feedback">No Squads Available!</h1>
+
+                </div>
+            {{/if}}
+        </div>
+    </div>
+{{/partial}}
+{{#partial "footer"}}
+    {{#if squads}}
+        <a href="/squadz/delete"><button class="btn btn-lg btn-danger"> Delete All Squads</button></a>
+    {{else}}
+    {{/if}}
+{{/partial}}
+{{> layout.hbs}}

@@ -12,11 +12,19 @@ import java.util.ArrayList;
 
 public class App {
     //-----------HEROKU START-----
+    static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
 
     //-----------HEROKU END-----
 
     public static void main (String[] args) {
         //heroku port
+        port(getHerokuAssignedPort());
         staticFileLocation("/public");
 
         Hero newHero1 = new Hero("PaperCut", 19,"can use papers to make any weapon","water",20,40);
