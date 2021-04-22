@@ -1,4 +1,4 @@
-package models;
+
 import models.Hero;
 import models.Squad;
 
@@ -15,8 +15,10 @@ public class App {
 
     //-----------HEROKU END-----
 
-    public static void main(String[] args) {
+    public static void main (String[] args) {
+        //heroku port
         staticFileLocation("/public");
+
         Hero newHero1 = new Hero("PaperCut", 19,"can use papers to make any weapon","water",20,40);
         Hero newHero2 =new Hero("Shadow San",30,"all martial arts","low temparatures",20,60);
         Hero newHero3 =new Hero("Mime Bomb",30,"magic sneak attacks","cats allergy",20,60);
@@ -24,6 +26,18 @@ public class App {
         Hero newHero5 =new Hero("Elon Mask",30,"Vast knowledge in powerfultech ","Emotional",20,60);
         Hero newHero6 =new Hero("Carmen Sandiego",19,"Pick Pocketing","flu",78,90);
 
+        ArrayList<Hero> squad1Heroes=new ArrayList<Hero>();
+        newHero1.updateHero(true);
+        newHero6.updateHero(true);
+
+        squad1Heroes.add(newHero1);
+        squad1Heroes.add(newHero6);
+        Squad squad1 = new Squad(10,"Myth Busters","justice and equality",squad1Heroes);
+
+
+
+
+        //HOME VIEW
         get("/",(request, response) ->{
             Map<String,Object> model = new HashMap<String,Object>();
             model.put("username", request.session().attribute("username"));
@@ -73,7 +87,6 @@ public class App {
             return new ModelAndView(model, "hero-form.hbs");
         }, new HandlebarsTemplateEngine());
 
-
         //B.)----------------------------CREATE SQUAD-----------------
         get("/squads/form",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -90,7 +103,7 @@ public class App {
         },new HandlebarsTemplateEngine());
 
 
-        post("/squads/new", (request, response) -> { //URL to make new post on POST route
+        post("/squads/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
 
             String name = request.queryParams("name");
@@ -115,6 +128,7 @@ public class App {
 
             return new ModelAndView(model, "squad-form.hbs");
         }, new HandlebarsTemplateEngine());
+
 
         //------------------------2.READ---------------
         //(ALL HEROES)
@@ -150,14 +164,6 @@ public class App {
 
         },new HandlebarsTemplateEngine());
 
-        //(ALL SQUADS)
-        get("/squads",(request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            model.put("squads",Squad.getSquads());
-            return new ModelAndView(model,"squads-view.hbs");
-
-        },new HandlebarsTemplateEngine());
-
         //(SPECIFIC SQUAD)
         get("/squads/:id",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
@@ -169,9 +175,12 @@ public class App {
             return new ModelAndView(model,"squad-view.hbs");
         },new HandlebarsTemplateEngine());
 
+
+
+
         //-----------------------4.DELETE( ALL HEROES)------------------
         //delete all heroes
-        get("/heroes/delete",(request, response) -> {
+        get("/Heroes/delete",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Hero.clearAll();
             model.put("heroes",Hero.getHeroes());
@@ -213,7 +222,7 @@ public class App {
         },new HandlebarsTemplateEngine());
 
         //delete all squads
-        get("/squads/delete",(request, response) -> {
+        get("/squadz/delete",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Squad.clearAll();
             ArrayList<Hero> heroes=Hero.getHeroes();
@@ -221,13 +230,11 @@ public class App {
                 heroes.get(i).updateHero(false);
             }
             model.put("squads",Squad.getSquads());
-            return new ModelAndView(model,"squad-view.hbs");
+            return new ModelAndView(model,"squads-view.hbs");
 
         },new HandlebarsTemplateEngine());;
 
 
-
-
-
     }
+
 }

@@ -1,20 +1,16 @@
 {{#partial "content"}}
     <div class="container mt-5">
-
         <div class="row text-center">
             {{#if squads}}
                 {{#each squads}}
                     <div class="col-lg-6 col-md-12 col-12 mb-4 image">
-
                         <div class="image-item">
                             <img  class="img-fluid image-img"src="/images/overlay3.png" alt="">
                             <div class="image-overlay ">
                                 <div class="image-info ">
                                     <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-6">
-                                            <img class="img-fluid rounded-circle image-img2" src="/images/hero2.png" alt="">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-6">
+
+                                        <div class="col-lg-12 col-md-12 col-12">
                                             <div class="image-title">
                                                 <p>NAME: {{name}}</p>
                                                 <p>CAUSE : {{cause}}</p>
@@ -42,7 +38,7 @@
 {{/partial}}
 {{#partial "footer"}}
     {{#if squads}}
-        <a href="/squads/delete"><button class="btn btn-lg btn-danger"> Delete All Squads</button></a>
+        <a href="/squadz/delete"><button class="btn btn-lg btn-danger"> Delete All Squads</button></a>
     {{else}}
     {{/if}}
 {{/partial}}

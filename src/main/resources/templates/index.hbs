@@ -1,21 +1,13 @@
-
 {{#partial "styles"}}
-
     <!--    Custom index page css-->
     <link rel="stylesheet" href="/css/custom.css">
 {{/partial}}
-
 {{#partial "content"}}
-
-
     <div class="container-fluid wrapper">
-
         <div class="logo">
             <img src="/images/bullLogo.png" alt="logo" />
         </div>
-
         {{#if username}}
-
             <div class="row username">
                 <h1 class="username-title text-center text-uppercase text-white">Welcome {{username}} to Hero Squad</h1>
             </div>
@@ -25,8 +17,6 @@
                     <a href="squads/form"><button class="btn  btn-lg home-btn">Add Squad</button></a>
 
                 </div>
-
-
             </div>
         {{else}}
             <div class="title text-center">
@@ -40,7 +30,6 @@
                 <button class="btn submitBtn" type="submit">SUBMIT</button>
             </form>
         {{/if}}
-
     </div>
 {{/partial}}
 {{> layout.hbs}}

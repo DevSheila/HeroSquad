@@ -10,9 +10,7 @@
                         <div class="image-overlay ">
                             <div class="image-info ">
                                 <div class="row">
-                                    <!--                                <div class="col-lg-6 col-md-6 col-6">-->
-                                    <!--                                    <img class="img-fluid rounded-circle image-img2" src="/images/hero2.png" alt="">-->
-                                    <!--                                </div>-->
+
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="image-title">
                                             <p>Name : {{hero.name}}</p>
@@ -23,8 +21,8 @@
                                             <p>Attack : {{hero.attack}}</p>
                                             <p>Occupied : {{hero.occupied}}</p>
                                             <div class="row">
-                                                <a href="/heroes"><button class="btn btn-danger">View All Heroes</button></a> <br><br>
-                                                <a href="/hero/{{hero.id}}/delete"><button class="btn btn-danger">Delete Hero</button></a>
+                                                <a href="/heroes"><button class="btn btn-primary m-2">View All Heroes</button></a> <br><br>
+                                                <a href="/hero/{{hero.id}}/delete"><button class="btn btn-danger m-2">Delete Hero</button></a>
                                             </div>
                                         </div>
                                     </div>
@@ -38,7 +36,7 @@
         {{else}}
 
             <div class="container">
-                <h1 class="text-center feedback">Squad Not Available!</h1>
+                <h1 class="text-center feedback">Hero Not Available!</h1>
 
             </div>
         {{/if}}

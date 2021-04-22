@@ -24,7 +24,7 @@ public class HeroTest {
     }
 
     @Test
-    public void returnAllInstancesOfHero() throws Exception{
+    public void getAllInstancesOfHero() throws Exception{
         Hero hero=setUpNewHero();
         Hero otherHero=setUpOtherHero();
         assertEquals(2,Hero.getHeroes().size());
@@ -38,7 +38,7 @@ public class HeroTest {
     }
 
     @Test
-    public void testIfInstanceIsUpdated() throws Exception {
+    public void testforUpdatedHeroInstance() throws Exception {
         Hero hero=setUpNewHero();
         int formerID=hero.getId();
         boolean formerOccupied=hero.isOccupied();
@@ -50,7 +50,6 @@ public class HeroTest {
     @Test
     public void deleteHeroById() {
         Hero hero=setUpNewHero();
-
         Hero otherHero=setUpOtherHero();
         hero.deleteHero();
         assertEquals(1,Hero.getHeroes().size());
@@ -67,7 +66,7 @@ public class HeroTest {
 
     }
     @Test
-    public void heroInstances() throws Exception{
+    public void heroInstancesAreContainedInHeroClass() throws Exception{
         Hero hero=setUpNewHero();
         Hero otherHero=setUpOtherHero();
         assertTrue(Hero.getHeroes().contains(hero));

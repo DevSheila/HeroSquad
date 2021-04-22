@@ -37,7 +37,7 @@ public class SquadTest {
     }
 
     @Test
-    public void allSquadsContainedInSquad() throws Exception {
+    public void SquadInstancesAreContainedInSquadClass() throws Exception {
         Squad squad=setUpNewSquad();
         Squad otherSquad=setUpNewSquad();
         assertTrue(Squad.getSquads().contains(squad));

@@ -1,13 +1,10 @@
 body {
-    /*padding-top: 56px;*/
-    /*background-color: #1d1d1d;*/
-
-    /*background-color: rgb(51, 51, 51);*/
-    background-image: url('../images/purplebackground2.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center center;
-    background-size: cover;
+    background-color: rgb(51, 51, 51);
+    /*background-image: url('../images/overlay3.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-position: center center;*/
+    /*background-size: cover;*/
 
 }
 .navbar{
@@ -117,6 +114,7 @@ hr{
     box-shadow:5px 5px 10px #4B0082;
 
 }
+
 .form-btn:hover{
     font-weight: 900;
     color:white;

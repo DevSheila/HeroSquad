@@ -31,6 +31,7 @@ public class Hero {
 
     }
 
+    //getters
     public String getName(){
         return name;
     }
@@ -56,9 +57,12 @@ public class Hero {
         return attack;
     }
 
+    //other getters
     public static ArrayList<Hero> getHeroes() {
         return heroes;
     }
+
+    //other methods
     public void updateHero(boolean occupied){
 
         this.occupied = occupied;
@@ -84,9 +88,6 @@ public class Hero {
         return imageUrl;
     }
 
-    public void setId(int id){
-        this.id = id;
-    }
 
 
     public static void clearAll(){
@@ -95,6 +96,11 @@ public class Hero {
     public boolean isOccupied() {
         return occupied;
     }
+    //setters
+    public void setId(int id){
+        this.id = id;
+    }
+
 
 
 }
